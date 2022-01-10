@@ -1,19 +1,15 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Fonts/plex_mono_15.tres" type="DynamicFont" id=1]
-[ext_resource path="res://NextButton.gd" type="Script" id=2]
-[ext_resource path="res://Examine.gd" type="Script" id=3]
 [ext_resource path="res://scripts/InputProcessor.gd" type="Script" id=4]
 [ext_resource path="res://scripts/FS2_Main.gd" type="Script" id=5]
 [ext_resource path="res://scripts/LocationProcessor.gd" type="Script" id=6]
-[ext_resource path="res://Locations/GreyAbbeyLibrary/scripts/GreyAbbeyLibrary.gd" type="Script" id=7]
-[ext_resource path="res://Locations/GreyAbbeyLibrary/scripts/GreyAbbeyLobby.gd" type="Script" id=8]
-[ext_resource path="res://Locations/GreyAbbeyLibrary/scripts/Bunker.gd" type="Script" id=9]
-[ext_resource path="res://Locations/GreyAbbeyLibrary/scripts/CommunalShower.gd" type="Script" id=10]
-[ext_resource path="res://Locations/GreyAbbeyLibrary/scripts/UndergroundRestroom.gd" type="Script" id=11]
-[ext_resource path="res://Locations/GreyAbbeyLibrary/scripts/MaintainenceStoreroom.gd" type="Script" id=12]
-[ext_resource path="res://NorthwestButton.gd" type="Script" id=13]
-[ext_resource path="res://NorthButton.gd" type="Script" id=14]
+[ext_resource path="res://Locations/GreyAbbeyLibrary/Rooms/GreyAbbeyLibrary.gd" type="Script" id=7]
+[ext_resource path="res://Locations/GreyAbbeyLibrary/Rooms/GreyAbbeyLobby.gd" type="Script" id=8]
+[ext_resource path="res://Locations/GreyAbbeyLibrary/Rooms/Bunker.gd" type="Script" id=9]
+[ext_resource path="res://Locations/GreyAbbeyLibrary/Rooms/CommunalShower.gd" type="Script" id=10]
+[ext_resource path="res://Locations/GreyAbbeyLibrary/Rooms/UndergroundRestroom.gd" type="Script" id=11]
+[ext_resource path="res://Locations/GreyAbbeyLibrary/Rooms/MaintainenceStoreroom.gd" type="Script" id=12]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.054902, 0.054902, 0.054902, 1 )
@@ -86,7 +82,7 @@ autowrap = true
 [node name="InputProcessor" type="Node" parent="."]
 script = ExtResource( 4 )
 
-[node name="LocationProcessor" type="Node" parent="."]
+[node name="LocationProcessor" type="Node" parent="." groups=["save"]]
 script = ExtResource( 6 )
 
 [node name="GreyAbbeyLibrary" type="Node" parent="LocationProcessor"]
@@ -399,13 +395,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.65
 custom_colors/font_color_disabled = Color( 0.952941, 0.537255, 0.0470588, 1 )
-custom_colors/font_color_focus = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_styles/focus = SubResource( 6 )
 text = "Next"
-script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -437,7 +431,6 @@ custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_styles/focus = SubResource( 6 )
 text = "Examine"
-script = ExtResource( 3 )
 
 [node name="Button4" type="Button" parent="MainPanel/MarginContainer/HBoxContainer/CenterVBoxContainer/ButtonPanel/ButtonPanelOrganizer/ActionPanelOrganizer/MainButtonOrganizer/ButtonRow1"]
 margin_left = 264.0
@@ -470,7 +463,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.65
 custom_colors/font_color_disabled = Color( 0.952941, 0.537255, 0.0470588, 1 )
-custom_colors/font_color_focus = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
@@ -491,7 +483,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.65
 custom_colors/font_color_disabled = Color( 0.952941, 0.537255, 0.0470588, 1 )
-custom_colors/font_color_focus = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
@@ -507,7 +498,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.65
 custom_colors/font_color_disabled = Color( 0.952941, 0.537255, 0.0470588, 1 )
-custom_colors/font_color_focus = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
@@ -526,7 +516,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.65
 custom_colors/font_color_disabled = Color( 0.952941, 0.537255, 0.0470588, 1 )
-custom_colors/font_color_focus = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
@@ -587,8 +576,7 @@ custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_styles/focus = SubResource( 6 )
-text = "AAAAAAAA"
-align = 0
+text = "Save"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -605,8 +593,7 @@ custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_styles/focus = SubResource( 6 )
-text = "AAAAAAAA"
-align = 0
+text = "Load"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -634,7 +621,6 @@ margin_bottom = 51.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/font_color_disabled = Color( 0.168627, 0.164706, 0.172549, 1 )
-custom_colors/font_color_focus = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
@@ -642,7 +628,6 @@ custom_constants/hseparation = 13
 custom_styles/focus = SubResource( 6 )
 text = "Northwest"
 expand_icon = true
-script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -654,7 +639,6 @@ margin_bottom = 108.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/font_color_disabled = Color( 0.168627, 0.164706, 0.172549, 1 )
-custom_colors/font_color_focus = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
@@ -674,7 +658,6 @@ margin_bottom = 165.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/font_color_disabled = Color( 0.168627, 0.164706, 0.172549, 1 )
-custom_colors/font_color_focus = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
@@ -701,14 +684,12 @@ margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/font_color_disabled = Color( 0.168627, 0.164706, 0.172549, 1 )
-custom_colors/font_color_focus = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_styles/focus = SubResource( 6 )
 text = "North"
 expand_icon = true
-script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -720,7 +701,6 @@ margin_bottom = 80.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/font_color_disabled = Color( 0.168627, 0.164706, 0.172549, 1 )
-custom_colors/font_color_focus = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
@@ -739,7 +719,6 @@ margin_bottom = 122.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/font_color_disabled = Color( 0.168627, 0.164706, 0.172549, 1 )
-custom_colors/font_color_focus = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
@@ -757,7 +736,6 @@ margin_bottom = 165.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/font_color_disabled = Color( 0.168627, 0.164706, 0.172549, 1 )
-custom_colors/font_color_focus = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
@@ -783,7 +761,6 @@ margin_bottom = 51.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/font_color_disabled = Color( 0.168627, 0.164706, 0.172549, 1 )
-custom_colors/font_color_focus = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
@@ -801,7 +778,6 @@ margin_bottom = 108.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/font_color_disabled = Color( 0.168627, 0.164706, 0.172549, 1 )
-custom_colors/font_color_focus = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
@@ -820,7 +796,6 @@ margin_bottom = 165.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/font_color_disabled = Color( 0.168627, 0.164706, 0.172549, 1 )
-custom_colors/font_color_focus = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_hover = Color( 0.952941, 0.537255, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0.952941, 0.537255, 0.0470588, 1 )
@@ -843,6 +818,8 @@ __meta__ = {
 [connection signal="room_information_sent" from="LocationProcessor/GreyAbbeyLibrary/UndergroundRestroom" to="LocationProcessor" method="_on_room_information_sent"]
 [connection signal="pressed" from="MainPanel/MarginContainer/HBoxContainer/CenterVBoxContainer/ButtonPanel/ButtonPanelOrganizer/ActionPanelOrganizer/MainButtonOrganizer/ButtonRow1/NextButton" to="InputProcessor" method="_on_NextButton_pressed"]
 [connection signal="pressed" from="MainPanel/MarginContainer/HBoxContainer/CenterVBoxContainer/ButtonPanel/ButtonPanelOrganizer/ActionPanelOrganizer/MainButtonOrganizer/ButtonRow1/Examine" to="InputProcessor" method="_on_Examine_pressed"]
+[connection signal="pressed" from="MainPanel/MarginContainer/HBoxContainer/CenterVBoxContainer/ButtonPanel/ButtonPanelOrganizer/ActionPanelOrganizer/MainButtonOrganizer/ButtonRow3/Button3" to="InputProcessor" method="_on_Button3_pressed"]
+[connection signal="pressed" from="MainPanel/MarginContainer/HBoxContainer/CenterVBoxContainer/ButtonPanel/ButtonPanelOrganizer/ActionPanelOrganizer/MainButtonOrganizer/ButtonRow3/Button4" to="InputProcessor" method="_on_Button4_pressed"]
 [connection signal="pressed" from="MainPanel/MarginContainer/HBoxContainer/CenterVBoxContainer/ButtonPanel/ButtonPanelOrganizer/DirectionalButtonOrganizer/DButtonColumn1/NorthwestButton" to="InputProcessor" method="_on_NorthwestButton_pressed"]
 [connection signal="pressed" from="MainPanel/MarginContainer/HBoxContainer/CenterVBoxContainer/ButtonPanel/ButtonPanelOrganizer/DirectionalButtonOrganizer/DButtonColumn1/WestButton" to="InputProcessor" method="_on_WestButton_pressed"]
 [connection signal="pressed" from="MainPanel/MarginContainer/HBoxContainer/CenterVBoxContainer/ButtonPanel/ButtonPanelOrganizer/DirectionalButtonOrganizer/DButtonColumn1/SouthwestButton" to="InputProcessor" method="_on_SouthwestButton_pressed"]
